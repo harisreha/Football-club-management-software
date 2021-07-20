@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Homepage</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles1.css' %}">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div class="nav-link-wrapper active-nav-link">
+          <a href="{% url 'home' %}">Home</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+          <a href="about.html">About</a>
+        </div>
+      </div>
+
+      <div class="right-side">
+        <div class="brand">
+          Welcome {{user}}
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="content-wrapper">
+      <div class="portfolio-items-wrapper" >
+
+        <div class="portfolio-item-wrapper" onclick='location.href="{% url 'adminpage' %}";' style="cursor: pointer;">
+          <div class="portfolio-img-background" style="background-image:url(/static/images/admin1.jpg)"></div>
+
+          <div class="img-text-wrapper">
+            
+
+            <div class="subtitle" style="padding-left: 105px;"><a href="{% url 'adminpage' %}">Administration</a></div>
+          </div>
+        </div>
+
+        <div class="portfolio-item-wrapper" onclick='location.href="{% url 'members' %}";' style="cursor: pointer;">
+          <div class="portfolio-img-background" style="background-image:url(/static/images/member.jpg)"></div>
+          <div class="img-text-wrapper">
+            
+
+            <div class="subtitle" style="padding-left: 115px;"><a href="{% url 'members' %}">Member's</a></div>
+          </div>
+        </div>
+
+        <div class="portfolio-item-wrapper" onclick='location.href="{% url 'inout' %}";' style="cursor: pointer;">
+          <div class="portfolio-img-background" style="background-image:url(/static/images/economy.jpg)"></div>
+          <div class="img-text-wrapper">
+            
+
+            <div class="subtitle" style="padding-left: 110px;"><a href="{% url 'inout' %}">Economy</a></div>
+          </div>
+        </div>
+
+        <div class="portfolio-item-wrapper" onclick='location.href="{% url 'staff' %}";' style="cursor: pointer;">
+          <div class="portfolio-img-background" style="background-image:url(/static/images/staff.jpg)"></div>
+          <div class="img-text-wrapper">
+            
+
+            <div class="subtitle" style="padding-left: 120px;"><a href="{% url 'staff' %}">Staff</a></div>
+          </div>
+        </div>
+
+        <div class="portfolio-item-wrapper" onclick='location.href="https://fkzeljeznicar.ba/";' style="cursor: pointer;">
+          <div class="portfolio-img-background" style="background-image:url(/static/images/offsite.jpg)"></div>
+          <div class="img-text-wrapper">
+            
+
+            <div class="subtitle" style="padding-left: 100px;"><a href="https://fkzeljeznicar.ba/">Official site</a></div>
+          </div>
+        </div>
+
+        <div class="portfolio-item-wrapper" onclick='location.href="{% url 'sponzors' %}";' style="cursor: pointer;">
+          <div class="portfolio-img-background" style="background-image:url(/static/images/sponzors.jpg)"></div>
+          <div class="img-text-wrapper">
+            
+
+            <div class="subtitle" style="padding-left: 110px;"><a href="{% url 'sponzors' %}">Sponsor's</a></div>
+          </div>
+        </div>
+
+        <div class="portfolio-item-wrapper" onclick='location.href="{% url 'stadion' %}";' style="cursor: pointer;">
+          <div class="portfolio-img-background" style="background-image:url(/static/images/grb.jpg)"></div>
+          <div class="img-text-wrapper">
+           
+
+            <div class="subtitle" style="padding-left: 115px;"><a href="{% url 'stadion' %}">Stadium</a></div>
+          </div>
+        </div>
+
+        <div class="portfolio-item-wrapper" onclick='location.href="{% url 'players' %}";' style="cursor: pointer;">
+          <div class="portfolio-img-background" style="background-image:url(/static/images/locker.jpg)"></div>
+          <div class="img-text-wrapper">
+           
+
+            <div class="subtitle" style="padding-left: 115px;"><a href="{% url 'players' %}">Player's</a></div>
+          </div>
+        </div>
+
+        <div class="portfolio-item-wrapper" onclick='location.href="{% url 'logout' %}";' style="cursor: pointer;">
+          <div class="portfolio-img-background" style="background-image:url(/static/images/exit.jpg)"></div>
+          <div class="img-text-wrapper">
+            
+
+            <div class="subtitle" style="padding-left: 125px;"><a href="{% url 'logout' %}">EXIT</a></div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+
+  portfolioItems.forEach(portfolioItem => {
+    portfolioItem.addEventListener('mouseover', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.add('image-blur');
+    });
+
+    portfolioItem.addEventListener('mouseout', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.remove('image-blur');
+    });
+  });
+
+</script>
+
+</html>

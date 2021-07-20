@@ -1,0 +1,151 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Staff</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	{% csrf_token %}
+	<div class="limiter">
+		<nav class="navbar navbar-dark bg-primary" style="padding: 0px;margin:0px;">
+		<form class="form-inline" style="padding-right: 1450px;">
+			<a  class="btn btn-primary" href="{% url 'home' %}" role="button" style="border: none;">Home</a>
+			<a class="btn btn-primary" href="{% url 'create_staff' %}" role="button" style="padding-left: 10px;border: none;">Add new Staff</a>
+		</form>
+		</nav>
+		<div class="container-table100">   
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row header">
+							<!--<div class="cell">
+								Id
+							</div>-->
+							<div class="cell" style="width: 100px;">
+								Name
+							</div>
+							<div class="cell">
+								Surname
+							</div>
+							<div class="cell">
+								E-Mail
+							</div>
+							<div class="cell">
+								Expiring date
+							</div>
+							<div class="cell" style="padding-left: 5px;">
+								Position
+							</div>
+							<div class="cell" style="padding-left: 15px;">
+								Salary
+							</div>
+							<div class="cell" style="padding-left: 15px;padding-right:15px;">
+								Options
+							</div>
+							
+						</div>
+            {% for i in members %}
+						<div class="row">
+							<!--<div class="cell" data-title="Id">
+								{{i.id}}
+							</div>-->
+							<div class="cell" data-title="Ime" style="width: 150px;">
+								{{i.name}}
+							</div>
+							<div class="cell" data-title="Prezime">
+								{{i.surname}}
+							</div>
+							<div class="cell" data-title="Datum rođenja">
+								{{i.email}}
+							</div>
+							<div class="cell" data-title="E-mail">
+								{{i.datumIstekaUgovora}}
+							</div>
+							<div class="cell" data-title="Ugovor" style="padding-left: 5px;width: 150px;">
+								{{i.pozicijaa}}
+							</div>
+							<div class="cell" data-title="Pozicija" style="padding-left: 15px;width: 150px;">
+								{{i.plata}} KM
+							</div>
+							<div class="cell" data-title="Options" style="padding-left: 15px;padding-right:15px;width: 150px;">
+								<button id="{{i.id}}" onclick="myFunc(this.id)" type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" >More</button>
+								<div class="modal fade" id="myModal" role="dialog">
+									<div class="modal-dialog">
+									
+									  <!-- Modal content-->
+									  <div class="modal-content">
+										<div class="modal-header">
+										  <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+										  <h4 class="modal-title">Pop up izbornik</h4>
+										</div>
+										<div class="modal-body">
+										  <p>Izaberite željenu opciju .</p>
+										</div>
+										<div class="modal-footer">
+										  <a id="abc" class="btn btn-danger btn-sm" href="{% url 'delete_staff' 'i.id' %}">Delete</a>
+										  <a id="cba" class="btn btn-primary btn-sm" href="{% url 'update_staff' 'i.id' %}">Update</a>	
+										  <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+										</div>
+									  </div>
+									  
+									</div>
+								  </div>
+							</div>
+							
+						</div>
+            {% endfor %}
+
+					</div>
+					
+			</div>
+		</div>
+	</div>
+<script>
+	function myFunc(id){
+		var pk = id
+		var link = document.getElementById("abc");
+		var new_url = "{% url 'delete_staff' pk=0 %}".replace('0', pk);
+   		link.setAttribute("href", new_url);
+		var link = document.getElementById("cba");
+		var new_url = "{% url 'update_staff' pk=0 %}".replace('0', pk);
+		link.setAttribute("href", new_url);
+	}
+
+</script>
+
+	
+
+<!--===============================================================================================-->	
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

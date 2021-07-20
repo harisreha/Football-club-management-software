@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stadium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/stadion.css' %}">
+    
+</head>
+<body>
+    <h1>Welcome to Stadium Grbavica</h1>
+    <div class="button">
+        <a href="#" id="btn-menu" class="btn-open"></a>
+
+    </div>
+    <div class="overlay">
+        <div class="nav-container">
+            <div class="nav-col">
+                <h2>About stands</h2>
+                <ul>
+                    <li><a href="{% url 'east' %}">East</a></li>
+                    <li><a href="{% url 'west' %}">West</a></li>
+                    <li><a href="{% url 'north' %}">North</a></li>
+                    <li><a href="{% url 'south' %}">South</a></li>
+                </ul>
+            </div>
+            <div class="nav-col">
+                <h2>History</h2>
+                <ul>
+                    <li><a href="{% url 'stadioninfo' %}">Stadium</a></li>
+                    <li><a href="{% url 'info' %}">F.K.Željezničar</a></li>
+                    <li><a href="{% url 'grbavica' %}">Grbavica settlement</a></li>
+                    <li><a href="{% url 'home' %}">Exit</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="{% static 'js/stadion.js' %}"></script>
+</body>
+</html>

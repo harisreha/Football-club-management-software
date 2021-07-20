@@ -1,0 +1,30 @@
+body{
+    margin: 100px auto;
+    text-align: center;
+    background-color: cornflowerblue;}
+.brisanje{
+    margin:100px;
+    border-color: blue;
+    
+    
+}
+.brisanje a{
+    text-decoration: none;
+    padding-right: 5px;
+    color:black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.brisanje a:hover{
+    color: blanchedalmond;
+}
+.brisanje input{
+    border-radius: 8px;
+    color: white;
+    background-color: blue;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.brisanje input:hover{
+    color: black;
+}

@@ -1,0 +1,137 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 70px;
+    color:#333;
+    text-align: center;
+    margin-top: 250px;
+}
+hr{
+    color: blue;
+}
+.button{
+    font-size: 50px;
+    position: absolute;
+    top: 6px;
+    right:50px;
+    z-index: 999;
+
+}
+.button a{
+    text-decoration: none;
+}
+.btn-open:after{
+    font-family: "FontAwesome";
+    content:"\f0c9";
+    color:#333;
+    transition: color 0.2s;
+}
+.btn-open:hover:after{
+    color: navy;
+}
+.btn-close:after{
+    font-family: "FontAwesome";
+    content:"\f00d";
+    color:#333;
+    transition: color 0.2s;
+}
+.btn-close:hover:after{
+    color: navy;
+}
+.overlay{
+    opacity: 1;
+    position: fixed;
+    top:0;
+    height: 100%;
+    width:100%;
+    background-color: rgb(24, 24, 224);
+}
+.nav-container{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.nav-col{
+    padding: 200px 0px;
+    width: 35%;
+    display: inline-block;
+}
+.nav-col h2 {
+    font-size: 50px;
+    color:#fff;
+
+}
+.nav-col ul {
+    padding: 0;
+    list-style: none;
+}
+.nav-col ul li a{
+    color: #f0f0f0;
+    font-size: 18px;
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.nav-col ul li a:hover{
+    color: #333;
+}
+.full-container{
+    padding: 5px;
+    padding-left: 70px;
+    margin: 5px;
+    height: 100%;
+    width: 90%;
+}
+.full-container h2{
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+}
+.full-container p{
+    font-size: 1.1rem;
+}
+.sec2{
+    display: inline;
+}
+.sec2-img{
+    width: 35%;
+    display: inline-flex;
+}
+.sec2-img1 img {
+    height: 300px;
+    width:300px;
+    padding-right: 37px;
+}
+.sec2-text{
+    margin-top: 0px auto;
+    padding-top: 0px auto;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+}
+.sec2-text p{
+    top:0;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+.sec3 img{
+    padding: 5% ;
+    width: 90%;
+    height: 100%;
+}
+.sec2-text1 p{
+    top:0;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 1.2rem;
+}
+.sec4{
+    display: inline-flex;
+}
+.sec4 img{
+    width: 50%;
+    height: 50%;
+}

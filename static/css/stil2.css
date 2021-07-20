@@ -1,0 +1,61 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: blue;
+    text-align: center;
+
+}
+.columns1{
+    
+    margin: 100px 680px;
+    padding: 10px;
+    text-align: center;
+    background-image: url(https://www.balcanicaucaso.org/var/obc/storage/images/media/images/ivica-osim-con-pele/589078-1-ita-IT/Ivica-Osim-con-Pele_large.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 32px;
+    color: #fff;
+    padding-top: 15px;
+    font-style: italic;
+    transition: 0.2s;
+}
+.title:hover{
+    color: cornflowerblue;
+}
+.field label{
+    font-size: 14px;
+    color: #fff;
+}
+.field input{
+    background: transparent;
+    border: solid #fff;
+    border-radius: 30%;
+}
+.columns1 a{
+    text-decoration: none;
+    color: #fff;
+    padding-top: 20px;
+    font-size: 20px;
+    transition: 0.2s;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.columns1 a:hover{
+    color: red;
+    cursor: pointer;
+}
+.columns1 input{
+    border-radius: 8px;
+    color: whitesmoke;
+    
+    transition: 0.2s;
+    cursor: pointer;
+}
+.columns1 input:hover{
+    color: red;
+    background-color: blue;
+}
+
